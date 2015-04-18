@@ -1,48 +1,55 @@
 $(document).ready(function(){
-  var card_array = ["Tokyo Ghoul", "Tokyo Ghoul", "DBZ", "DBZ", "Bobobo", "Bobobo", "Broly", "Broly", "Levi", "Levi", "Grandma", "Grandma", "Blackarot", "Blackarot", "Shamu", "Shamu", "It G Ma", "It G Ma", "Ye", "Ye"];
-  var click_count = 0;
-  var click_1 = 'nothing';
-  var click_2 = 'nothing';
+  var click_count=0;
+  var first_guess=0;
+  var second_guess=0;
+  var first_card=0;//these are variables that will compare the numbers
+  var card_array = ["1", "1", "2", "2", "3", "3", "4", "4", "5", "5", "6", "6", "7", "7", "8", "8", "9", "9", "10", "10"];//numbers on cards
   
   function shuffle(array) {
-    var counter = array.length, temp, index;
-
-    // While there are elements in the array
-    while (counter > 0) {
-        // Pick a random index
-        index = Math.floor(Math.random() * counter);
-
-        // Decrease counter by 1
-        counter--;
-
-        // And swap the last element with it
-        temp = array[counter];
-        array[counter] = array[index];
-        array[index] = temp;
+    var currentIndex = array.length, temporaryValue, randomIndex ;//change order of cards
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+    // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);//random order
+      currentIndex -= 1;
+    // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
     }
-
     return array;
-}
-	var fluffled_array = shuffle(card_array);
+  }
   
-  for(i in fluffled_array){
-    $('#card_holder').append('<div class="card"><p>'+fluffled_array[i]+'</p></div>');
-  };
-  $('.card').click(function(){
-    if(click_count == 0){
-  	$(this).find('p').css('opacity', 1);
-    $(this).find('p').addClass('clicked');  
+  var shuffle2 = shuffle(card_array);
+for(i in shuffle2){//this is the numbers that will appear on each card
+    $('#card_holder').append('<div class="card"><p>'+shuffle2[i]+'</p></div>');
+  }
+  
+  $("div.card").click(function(){
+    if(click_count == 0){//limit the clicks and cards that face up
+      $(this).find('p').css("opacity","1").addClass('potato');
+      first_guess=$(this).find('p').html();
       click_count = 1;
-      click_1 = $(this).find('p').text();
     }
-    else{	
-      $(this).find('p').css('opacity', 1);
+    else{
+      $(this).find('p').css("opacity","1").addClass('potato');//place cards down
+      second_guess=$(this).find('p').html();
       click_count = 0;
-      click_2 = $(this).find('p').text();
-      $(this).find('p').addClass('clicked');
-      if(click_1 != click_2){
-         setTimeout(function(){$('.clicked').css('opacity', '0').removeClass('clicked')}, 1000);
+      if(first_guess == second_guess){
+        $('.potato').css('color', 'blue').removeClass('potato');//when same color change
       }
-    };
-	});
+      else{
+        setTimeout(function(){$('.potato').css('opacity', 0).removeClass('potato')}, 1000);
+      }
+    }
+  //   var mynum=0;
+  //   var firstcard,secondcard;
+    
+  //   if(!onfirstclick){
+  //     //compare cards
+  //   }else{
+    
+  // }
+    
+  });
 });
