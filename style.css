@@ -1,0 +1,16 @@
+body{
+  background-color:#CFFCF9;
+}
+h1{
+  font-size:55px;
+  text-align:center;
+}
+.potato{
+  display: inline-block;
+  float:left;
+  width:33%;
+  font-size:20px;
+  border:3px double;
+  border-radius:25px;
+  border-color:#8DFCC3
+}
