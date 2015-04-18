@@ -3,7 +3,7 @@ $(document).ready(function(){
   var first_guess=0;
   var second_guess=0;
   var first_card=0;//these are variables that will compare the numbers
-  var card_array = ["1", "1", "2", "2", "3", "3", "4", "4", "5", "5", "6", "6", "7", "7", "8", "8", "9", "9", "10", "10"];//numbers on cards
+  var card_array = ["Tokyo Ghoul", "Tokyo Ghoul", "DBZ", "DBZ", "Broly", "Broly", "Grandma", "Grandma", "Foof", "Foof", "Thug Life", "Thug Life", "Homie G", "Homie G", "Ye", "Ye", "Shamu", "Shamu", "Cr1tikal", "Cr1tikal"];//numbers on cards
   
   function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex ;//change order of cards
