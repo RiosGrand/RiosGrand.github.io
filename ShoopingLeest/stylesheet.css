@@ -1,4 +1,29 @@
-h1{
-  text-align:center;
-  font-size:100px;
+nav{
+  text-align: center;
+  font-size: 45px;
+  font-weight: bold;
+}
+table, td, th {
+    border: 1px solid black;
+}
+td {
+    height: 50px;
+    vertical-align: bottom;
+}
+select{display: inline-block;
+  text-align: center;
+  width: 100px;
+  height: 75px;
+  border: 2px solid;
+  border-radius: 10px;
+  border-color: #8C8F8C;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  position: absolute;
+    left: 500px;
+    top:  100px;
+}
+html{
+  background-color:blue;
+}
 }
