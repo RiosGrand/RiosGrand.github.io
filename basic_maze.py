@@ -26,3 +26,10 @@ def move right():
 
 
 move_foward(4)
+move right()
+move_foward(3)
+move_right()
+move_foward(2)
+move_left()
+move_left()
+move_foward(2)
